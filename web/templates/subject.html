@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>História A</title>
+</head>
+
+<body>
+    <h1>Tópicos</h1>
+    <table>
+        <tr>
+            <th>Tópico</th>
+            <th>Probabilidade</th>
+        </tr>
+        {% for topic, score in scores.items() %}
+        <tr>
+            <td>{{ topic }}</td>
+            <td>{{ score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

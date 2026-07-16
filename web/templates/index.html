@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IAVE Predictor</title>
+</head>
+<body>
+    <h1>IAVE Topic Predictor</h1>
+    {% for name, code in subjects %}
+        <a href="/{{code}}">{{name}}</a>
+    {% endfor %}
+</body>
+</html>

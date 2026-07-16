@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+venv/
+
+# Variáveis de ambiente (API keys!)
+.env
+
+# Base de dados local
+data/iave.db
+data/raw/
+
+# PDFs (ficheiros grandes)
+data/pdfs/
+
+# IDE
+.vscode/settings.json
+*.swp
