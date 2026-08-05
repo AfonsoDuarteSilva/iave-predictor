@@ -1,10 +1,11 @@
 import sys
 import os 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from pipeline.database import get_subject_id
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  
+from pipeline.database import get_subject_id, add_topic, add_exam, get_topics, init_db
 from pipeline.extractor import extract_pdf, save_raw_text
-from pipeline.categorizer import categorize_text
+from pipeline.categorizer import categorize_text, extract_groups
 from pipeline.scorer import calculates_scores
+from pipeline.save_outputs import save_topics_txt
 
 def main():
     if len(sys.argv) != 2:
@@ -12,14 +13,35 @@ def main():
         sys.exit(1)
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     path = sys.argv[1]
-    pdf = extract_pdf(path)
-    filename, ext = os.path.splitext(os.path.basename(path))
-    output_path = os.path.join(project_root, "data", "raw", filename + ".txt")
-    save_raw_text(pdf, output_path)
-    subject = os.path.basename(os.path.dirname(path))
-    categorize_text(pdf, subject)
+    text = extract_pdf(path)
     db_path = os.path.join(project_root, "data", "iave.db")
+    init_db(db_path)
+    filename, ext = os.path.splitext(os.path.basename(path))
+    subject = os.path.basename(os.path.dirname(path))
     subject_id = get_subject_id(subject, db_path)
+    info = filename.split("-")
+    exam_year = int((info[3]))
+    exam_phase = int(info[2][1:])
+    exam_id = add_exam(exam_year, exam_phase, subject_id, db_path)
+    output_path = os.path.join(project_root, "data", "raw", filename + ".txt")
+    save_raw_text(text, output_path)
+
+    existing_topics = get_topics(subject_id, db_path)
+    all_topics = []
+
+    groups = extract_groups(text) # divides the exam in groups
+    for group_name, group_text in groups.items(): # the topics in each group 
+        topics = categorize_text(group_text, subject, existing_topics)
+        group_topics = topics.get("topics", [])
+
+        for topic in group_topics:
+            add_topic(topic["name"], topic ["confidence"], exam_id, subject_id, db_path) # adds all the topics from this exam in the db
+
+        all_topics.extend(group_topics)
+
+    output_path = os.path.join(project_root, "data", "outputs", f"{exam_year}_{exam_phase}.txt")
+    save_topics_txt(all_topics, output_path)
+
     calculates_scores(subject_id, db_path)
 
 if __name__ == "__main__":

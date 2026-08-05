@@ -18,9 +18,8 @@ def calculates_scores(subject_id, db_path):
         for topic_id, topic_name in topics:
             cursor.execute("""
             SELECT DISTINCT e.year FROM exams e
-            JOIN questions q ON q.exam_id = e.id
-            JOIN question_topics qt ON qt.question_id = q.id
-            WHERE qt.topic_id = ?
+            JOIN exam_topics et ON et.exam_id = e.id
+            WHERE et.topic_id = ?
             """, (topic_id,))
             years = cursor.fetchall()
             score = 0

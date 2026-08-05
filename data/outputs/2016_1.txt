@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Portugal Medieval - Sociedade e Poder Político (Séculos XIII-XIV)",
+        "confidence": 0.95
+    },
+    {
+        "name": "Cortes Medievais Portuguesas",
+        "confidence": 0.95
+    },
+    {
+        "name": "Economia Medieval Portuguesa",
+        "confidence": 0.9
+    },
+    {
+        "name": "Relações entre Clero, Nobreza e Concelhos em Portugal Medieval",
+        "confidence": 0.85
+    },
+    {
+        "name": "Portugal no Final da Monarquia e Implantação da República",
+        "confidence": 0.95
+    },
+    {
+        "name": "Republicanismo e Afonso Costa",
+        "confidence": 0.88
+    },
+    {
+        "name": "Crise do Rotativismo e Ditadura de João Franco",
+        "confidence": 0.85
+    },
+    {
+        "name": "Monarquia Constitucional Portuguesa",
+        "confidence": 0.82
+    },
+    {
+        "name": "República de Weimar e primeiro pós-guerra alemão",
+        "confidence": 0.92
+    },
+    {
+        "name": "Nazismo e Terceiro Reich",
+        "confidence": 0.95
+    },
+    {
+        "name": "Grande Depressão e impacto económico na Alemanha",
+        "confidence": 0.88
+    },
+    {
+        "name": "Plano Marshall e reconstrução europeia no pós-guerra",
+        "confidence": 0.9
+    },
+    {
+        "name": "Integração Europeia e Adesão de Portugal à CEE",
+        "confidence": 0.95
+    },
+    {
+        "name": "Construção da União Europeia e Instituições Comunitárias",
+        "confidence": 0.92
+    },
+    {
+        "name": "Dificuldades da Unidade Europeia no Final do Século XX",
+        "confidence": 0.85
+    }
+]

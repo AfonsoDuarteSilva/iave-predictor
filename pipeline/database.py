@@ -22,15 +22,6 @@ def init_db(db_path):
             )
         """)
 
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS questions(
-                -- questions
-                id INTEGER PRIMARY KEY,
-                exam_id INTEGER REFERENCES exams(id),
-                number TEXT NOT NULL,
-                raw_text TEXT       
-            )
-        """)
 
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS topics(
@@ -42,15 +33,15 @@ def init_db(db_path):
                 UNIQUE(subject_id, name) 
             )
         """)
-
+        
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS question_topics(
-                -- question_topics
-                question_id INTEGER REFERENCES questions(id),
-                topic_id INTEGER REFERENCES topics(id),
+            CREATE TABLE IF NOT EXISTS exam_topics(
+                -- exam_topics
+                exam_id REFERENCES exams(id),
+                topic_id REFERENCES topics(id),
                 confidence REAL,
-                PRIMARY KEY (question_id, topic_id)
-            )     
+                PRIMARY KEY (exam_id, topic_id)
+            )
         """)
 
         conn.commit()
@@ -60,4 +51,34 @@ def get_subject_id(subject_code, db_path):
         cursor = conn.cursor()
         cursor.execute("""SELECT id FROM subjects WHERE code = ?""", (subject_code, ))
         result = cursor.fetchone()
-        return result[0]
+        if result is None:
+            cursor.execute("""INSERT INTO subjects (name, code) VALUES (?,?)""", (subject_code, subject_code))
+            conn.commit()
+            return cursor.lastrowid
+    return result[0] 
+
+def add_topic(topic_name, confidence, exam_id, subject_id, db_path):
+    topic_name = topic_name.strip().capitalize()
+    with sqlite3.connect(db_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""INSERT OR IGNORE INTO topics (name, subject_id) VALUES (?, ?)""", (topic_name, subject_id))
+        cursor.execute("""SELECT id FROM topics WHERE name = ? AND subject_id = ?""", (topic_name, subject_id))
+        topic_id = cursor.fetchone()[0]
+        cursor.execute("""INSERT OR IGNORE INTO exam_topics (topic_id, confidence, exam_id) VALUES (?,?,?)""", (topic_id, confidence, exam_id))
+        conn.commit()
+
+def add_exam(year, phase, subject_id, db_path):
+    with sqlite3.connect(db_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""INSERT OR IGNORE INTO exams (year, phase, subject_id) VALUES (?,?,?)""", (year, phase, subject_id))
+        cursor.execute("""SELECT id FROM exams WHERE (year, subject_id, phase) = (?, ?, ?)""", (year, phase, subject_id))
+        exam_id = cursor.fetchone()[0]
+        conn.commit()
+        return exam_id
+
+def get_topics(subject_id, db_path):
+    with sqlite3.connect(db_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""SELECT name FROM topics WHERE subject_id = ?""", (subject_id, ))
+        t = cursor.fetchall()
+    return  [row[0] for row in t]
