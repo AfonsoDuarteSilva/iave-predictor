@@ -1,30 +1,44 @@
 import sqlite3
 import math
+from datetime import datetime
 
-
-LAMBDA = 0.3
-current_year = 2026
-
-def sigmoid(x):
-    return 1 / (1 + math.exp(-x))
+ALPHA = 0.5  
+current_year = datetime.now().year
 
 def calculates_scores(subject_id, db_path):
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()
+
+        cursor.execute("SELECT COUNT(*) FROM exams WHERE subject_id = ?", (subject_id,))
+        total_exams = cursor.fetchone()[0]
+
+        if total_exams == 0:
+            return {}
+
         cursor.execute("SELECT id, name FROM topics WHERE subject_id = ?", (subject_id,))
         topics = cursor.fetchall()
-        scores = {} 
-        # For each topic, get all years in which it appeared across exams
+
+        scores = {}
+
         for topic_id, topic_name in topics:
             cursor.execute("""
-            SELECT DISTINCT e.year FROM exams e
-            JOIN exam_topics et ON et.exam_id = e.id
-            WHERE et.topic_id = ?
+                SELECT e.year FROM exams e
+                JOIN exam_topics et ON et.exam_id = e.id
+                WHERE et.topic_id = ?
             """, (topic_id,))
-            years = cursor.fetchall()
-            score = 0
-            for(year,) in years:
-                score += math.exp(-LAMBDA * (current_year - year))
-            scores[topic_name] = sigmoid(score) 
+            years = [row[0] for row in cursor.fetchall()]
+
+            if not years:
+                scores[topic_name] = 0.0
+                continue
+
+            lam = len(years) / total_exams
+
+            x = (current_year + 1) - max(years)
+
+            score = ALPHA * lam + (1 - ALPHA) * (1 - math.exp(-lam * x))
+
+            scores[topic_name] = round(score, 4)
+
     return scores
-        
+
