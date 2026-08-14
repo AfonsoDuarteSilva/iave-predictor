@@ -2,10 +2,11 @@ import sqlite3
 import math
 from datetime import datetime
 
-ALPHA = 0.5  
-current_year = datetime.now().year
+ALPHA = 0.5
 
-def calculates_scores(subject_id, db_path):
+def calculates_scores(subject_id, db_path, target_year=None, phase=None):
+    current_year = target_year if target_year else datetime.now().year
+
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()
 
@@ -33,12 +34,8 @@ def calculates_scores(subject_id, db_path):
                 continue
 
             lam = len(years) / total_exams
-
-            x = (current_year + 1) - max(years)
-
+            x = current_year - max(years)
             score = ALPHA * lam + (1 - ALPHA) * (1 - math.exp(-lam * x))
-
             scores[topic_name] = round(score, 4)
 
     return scores
-

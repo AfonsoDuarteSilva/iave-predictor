@@ -1,12 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>IAVE Predictor</title>
-</head>
-<body>
-    <h1>IAVE Topic Predictor</h1>
-    {% for name, code in subjects %}
-        <a href="/{{code}}">{{name}}</a>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}IAVE Predictor{% endblock %}
+{% block content %}
+<div class="hero">
+    <p class="eyebrow">Exames Nacionais · 2026</p>
+    <h1>O que pode sair<br>no próximo exame?</h1>
+    <p class="subtitle">Análise de padrões históricos do IAVE para estimar os tópicos com maior probabilidade de
+        aparecer.</p>
+</div>
+
+<section class="how-it-works">
+    <p class="section-label">Como funciona</p>
+    <div class="steps">
+        <div class="step">
+            <span class="step-num">01</span>
+            <p>Analisamos os exames nacionais desde 2015, extraindo os tópicos abordados em cada grupo.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">02</span>
+            <p>Identificamos padrões de rotação — tópicos que o IAVE tende a alternar ao longo dos anos.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">03</span>
+            <p>Calculamos uma probabilidade para cada tópico com base na frequência histórica e nos anos de ausência.
+            </p>
+        </div>
+    </div>
+    <p class="disclaimer">⚠ As previsões são baseadas em padrões históricos e não constituem uma garantia. Usa-as como
+        guia de estudo, não como substituto de uma preparação completa.</p>
+</section>
+
+<section class="subjects">
+    <p class="section-label">Disciplinas disponíveis</p>
+    <div class="subject-list">
+        {% for name, code in subjects %}
+        <a href="/{{ code }}" class="subject-card">
+            <span class="subject-name">{{ name }}</span>
+            <span class="arrow">→</span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -28,25 +28,31 @@ def main():
     save_raw_text(text, output_path)
 
     existing_topics = get_topics(subject_id, db_path)
-    all_topics = []
+    raw_exam_topics = []
 
-    groups = extract_groups(text) # divides the exam in groups
+    groups = extract_groups(text)
     print(groups.keys())
-    for group_name, group_text in groups.items(): # the topics in each group 
-        print(len(group_text))
-        topics = categorize_text(group_text, subject,existing_topics)
+    
+    for group_name, group_text in groups.items():
+        topics = categorize_text(group_text, subject, existing_topics)
         group_topics = topics.get("topics", [])
-        norm_group = normalize_topics(group_topics, 0.65)
+        raw_exam_topics.extend(group_topics)
 
-        for topic in norm_group:
-            if topic["confidence"] >= 0.75:
-                topic["name"] = match_to_existing(topic["name"], existing_topics, 0.65)
-                add_topic(topic["name"], topic ["confidence"], exam_id, subject_id, db_path) # adds all the topics from this exam in the db
-                existing_topics.append(topic["name"])
-                all_topics.append(topic)
+    filtered_topics = [t for t in raw_exam_topics if t["confidence"] >= 0.75]
+    norm_exam = normalize_topics(filtered_topics, 0.65)
+
+    all_topics = []
+    for topic in norm_exam:
+        topic["name"] = match_to_existing(topic["name"], existing_topics, 0.65)
+        
+        add_topic(topic["name"], topic["confidence"], exam_id, subject_id, db_path)
+        
+        if topic["name"] not in existing_topics:
+            existing_topics.append(topic["name"])
+            
+        all_topics.append(topic)
 
     output_path = os.path.join(project_root, "data", "outputs", f"{exam_year}_{exam_phase}.txt")
-    print(all_topics)
     save_topics_txt(all_topics, output_path)
 
     calculates_scores(subject_id, db_path)

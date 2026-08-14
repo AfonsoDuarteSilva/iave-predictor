@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Arte e humanismo renascentista",
+        "confidence": 0.97
+    },
+    {
+        "name": "Crise da monarquia constitucional portuguesa",
+        "confidence": 0.95
+    },
+    {
+        "name": "Imperialismo e partilha de áfrica",
+        "confidence": 0.92
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.75
+    },
+    {
+        "name": "Transformações sociais e culturais do século xx",
+        "confidence": 0.95
+    },
+    {
+        "name": "Vanguardas artísticas do século xx",
+        "confidence": 0.8
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.85
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.95
+    },
+    {
+        "name": "Revolução de abril e processo revolucionário português",
+        "confidence": 0.9
+    },
+    {
+        "name": "Transformações sociais e culturais do século xx",
+        "confidence": 0.85
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Clero e nobreza na idade média",
+        "confidence": 0.9
+    },
+    {
+        "name": "Sociedade e economia medieval portuguesa",
+        "confidence": 0.9
+    },
+    {
+        "name": "Movimento operário e socialismo",
+        "confidence": 0.95
+    },
+    {
+        "name": "Sociedade industrial do século xix",
+        "confidence": 0.9
+    },
+    {
+        "name": "Marxismo e luta de classes",
+        "confidence": 0.8
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.95
+    },
+    {
+        "name": "Nazismo e totalitarismo alemão",
+        "confidence": 0.9
+    },
+    {
+        "name": "Grande depressão e impacto económico",
+        "confidence": 0.85
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.85
+    },
+    {
+        "name": "Construção e desafios da unidade europeia",
+        "confidence": 0.95
+    },
+    {
+        "name": "Integração europeia e adesão de portugal à cee",
+        "confidence": 0.95
+    },
+    {
+        "name": "Instituições e governação da união europeia",
+        "confidence": 0.9
+    }
+]

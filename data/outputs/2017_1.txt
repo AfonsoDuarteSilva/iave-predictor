@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Cultura e arte no império romano",
+        "confidence": 0.98
+    },
+    {
+        "name": "Arquitetura e urbanismo romano",
+        "confidence": 0.95
+    },
+    {
+        "name": "Expansão e romanização",
+        "confidence": 0.85
+    },
+    {
+        "name": "Política pombalina e iluminismo em portugal",
+        "confidence": 0.95
+    },
+    {
+        "name": "Sociedade e economia medieval portuguesa",
+        "confidence": 0.9
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.98
+    },
+    {
+        "name": "República portuguesa e cultura",
+        "confidence": 0.85
+    },
+    {
+        "name": "Guerra fria e bipolarização mundial",
+        "confidence": 0.95
+    },
+    {
+        "name": "Trinta gloriosos e prosperidade europeia",
+        "confidence": 0.92
+    },
+    {
+        "name": "Desenvolvimento económico dos países da ásia-pacífico",
+        "confidence": 0.97
+    },
+    {
+        "name": "China e reformas económicas de deng xiaoping",
+        "confidence": 0.93
+    }
+]

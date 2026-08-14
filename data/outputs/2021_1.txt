@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Clero e nobreza na idade média",
+        "confidence": 0.95
+    },
+    {
+        "name": "Sociedade e economia medieval portuguesa",
+        "confidence": 0.9
+    },
+    {
+        "name": "Sociedade industrial do século xix",
+        "confidence": 0.95
+    },
+    {
+        "name": "Revolução industrial e maquinofatura",
+        "confidence": 0.95
+    },
+    {
+        "name": "Transformações sociais e culturais do século xx",
+        "confidence": 0.95
+    },
+    {
+        "name": "Vanguardas artísticas do século xx",
+        "confidence": 0.9
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.8
+    },
+    {
+        "name": "Alemanha no primeiro pós-guerra e república de weimar",
+        "confidence": 0.75
+    },
+    {
+        "name": "Revolução de abril e processo revolucionário português",
+        "confidence": 0.98
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.92
+    }
+]

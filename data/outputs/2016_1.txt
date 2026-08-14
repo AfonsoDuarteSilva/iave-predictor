@@ -1,62 +1,58 @@
 [
     {
-        "name": "Portugal Medieval - Sociedade e Poder Político (Séculos XIII-XIV)",
+        "name": "Sociedade e economia medieval portuguesa",
         "confidence": 0.95
     },
     {
-        "name": "Cortes Medievais Portuguesas",
-        "confidence": 0.95
-    },
-    {
-        "name": "Economia Medieval Portuguesa",
-        "confidence": 0.9
-    },
-    {
-        "name": "Relações entre Clero, Nobreza e Concelhos em Portugal Medieval",
-        "confidence": 0.85
-    },
-    {
-        "name": "Portugal no Final da Monarquia e Implantação da República",
-        "confidence": 0.95
-    },
-    {
-        "name": "Republicanismo e Afonso Costa",
-        "confidence": 0.88
-    },
-    {
-        "name": "Crise do Rotativismo e Ditadura de João Franco",
-        "confidence": 0.85
-    },
-    {
-        "name": "Monarquia Constitucional Portuguesa",
-        "confidence": 0.82
-    },
-    {
-        "name": "República de Weimar e primeiro pós-guerra alemão",
+        "name": "Poder político e cortes medievais",
         "confidence": 0.92
     },
     {
-        "name": "Nazismo e Terceiro Reich",
+        "name": "Clero e nobreza na idade média",
+        "confidence": 0.85
+    },
+    {
+        "name": "Crise da monarquia constitucional portuguesa",
         "confidence": 0.95
     },
     {
-        "name": "Grande Depressão e impacto económico na Alemanha",
+        "name": "República portuguesa e cultura",
+        "confidence": 0.85
+    },
+    {
+        "name": "Poder político e cortes medievais",
+        "confidence": 0.8
+    },
+    {
+        "name": "Nazismo e totalitarismo alemão",
+        "confidence": 0.97
+    },
+    {
+        "name": "Alemanha no primeiro pós-guerra e República de Weimar",
+        "confidence": 0.95
+    },
+    {
+        "name": "Grande Depressão e impacto económico",
         "confidence": 0.88
     },
     {
-        "name": "Plano Marshall e reconstrução europeia no pós-guerra",
+        "name": "Plano Marshall e reconstrução europeia",
         "confidence": 0.9
     },
     {
-        "name": "Integração Europeia e Adesão de Portugal à CEE",
+        "name": "Integração europeia e adesão de Portugal à CEE",
+        "confidence": 0.98
+    },
+    {
+        "name": "Instituições e governação da União Europeia",
         "confidence": 0.95
     },
     {
-        "name": "Construção da União Europeia e Instituições Comunitárias",
-        "confidence": 0.92
+        "name": "Política externa portuguesa pós-25 de abril",
+        "confidence": 0.85
     },
     {
-        "name": "Dificuldades da Unidade Europeia no Final do Século XX",
-        "confidence": 0.85
+        "name": "Construção e desafios da unidade europeia",
+        "confidence": 0.9
     }
 ]

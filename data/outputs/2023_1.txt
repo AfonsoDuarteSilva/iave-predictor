@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Cultura e arte no império romano",
+        "confidence": 0.95
+    },
+    {
+        "name": "Expansão e romanização",
+        "confidence": 0.75
+    },
+    {
+        "name": "Revolução liberal de 1820 e constitucionalismo português",
+        "confidence": 0.98
+    },
+    {
+        "name": "Liberalismo e pensamento político do século xix",
+        "confidence": 0.92
+    },
+    {
+        "name": "Antigo regime e absolutismo",
+        "confidence": 0.75
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.98
+    },
+    {
+        "name": "Nazismo e totalitarismo alemão",
+        "confidence": 0.75
+    },
+    {
+        "name": "Guerra fria e bipolarização mundial",
+        "confidence": 0.95
+    },
+    {
+        "name": "Construção e desafios da unidade europeia",
+        "confidence": 0.85
+    },
+    {
+        "name": "Trinta gloriosos e prosperidade europeia",
+        "confidence": 0.75
+    },
+    {
+        "name": "Desagregação da URSS e transição para economia de mercado",
+        "confidence": 0.98
+    }
+]

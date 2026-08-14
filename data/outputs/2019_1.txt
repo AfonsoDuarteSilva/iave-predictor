@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Censura e inquisição",
+        "confidence": 0.95
+    },
+    {
+        "name": "Contrarreforma e concílio de trento",
+        "confidence": 0.95
+    },
+    {
+        "name": "Reforma protestante",
+        "confidence": 0.8
+    },
+    {
+        "name": "Arte e humanismo renascentista",
+        "confidence": 0.85
+    },
+    {
+        "name": "Política pombalina e iluminismo em portugal",
+        "confidence": 0.95
+    },
+    {
+        "name": "Revolução liberal de 1820 e constitucionalismo português",
+        "confidence": 0.95
+    },
+    {
+        "name": "Transformações sociais e culturais do século xx",
+        "confidence": 0.85
+    },
+    {
+        "name": "Vanguardas artísticas do século xx",
+        "confidence": 0.8
+    },
+    {
+        "name": "Crise da monarquia constitucional portuguesa",
+        "confidence": 0.75
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.95
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.9
+    },
+    {
+        "name": "Guerra colonial portuguesa",
+        "confidence": 0.9
+    },
+    {
+        "name": "Integração europeia e adesão de portugal à cee",
+        "confidence": 0.8
+    }
+]

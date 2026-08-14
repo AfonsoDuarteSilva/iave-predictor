@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Reforma Protestante",
+        "confidence": 0.9
+    },
+    {
+        "name": "Contrarreforma e Concílio de Trento",
+        "confidence": 0.98
+    },
+    {
+        "name": "Dogma e culto católico",
+        "confidence": 0.85
+    },
+    {
+        "name": "Censura e Inquisição",
+        "confidence": 0.75
+    },
+    {
+        "name": "Marxismo e luta de classes",
+        "confidence": 0.95
+    },
+    {
+        "name": "Movimento operário e socialismo",
+        "confidence": 0.9
+    },
+    {
+        "name": "Sociedade industrial do século XIX",
+        "confidence": 0.85
+    },
+    {
+        "name": "Vanguardas artísticas do século XX",
+        "confidence": 0.95
+    },
+    {
+        "name": "Transformações sociais e culturais do século XX",
+        "confidence": 0.9
+    },
+    {
+        "name": "Condição da mulher no século XX",
+        "confidence": 0.85
+    },
+    {
+        "name": "República Portuguesa e cultura",
+        "confidence": 0.75
+    },
+    {
+        "name": "Estado Novo e Salazarismo",
+        "confidence": 0.95
+    },
+    {
+        "name": "Guerra Colonial Portuguesa",
+        "confidence": 0.98
+    },
+    {
+        "name": "Política externa portuguesa pós-25 de Abril",
+        "confidence": 0.9
+    }
+]

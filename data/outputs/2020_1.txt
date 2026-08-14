@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Reforma protestante",
+        "confidence": 0.98
+    },
+    {
+        "name": "Liberalismo e pensamento político do século xix",
+        "confidence": 0.95
+    },
+    {
+        "name": "Revolução liberal de 1820 e constitucionalismo português",
+        "confidence": 0.92
+    },
+    {
+        "name": "Iluminismo e enciclopedismo",
+        "confidence": 0.9
+    },
+    {
+        "name": "Antigo regime e absolutismo",
+        "confidence": 0.88
+    },
+    {
+        "name": "Guerra fria e bipolarização mundial",
+        "confidence": 0.98
+    },
+    {
+        "name": "Plano marshall e reconstrução europeia",
+        "confidence": 0.92
+    },
+    {
+        "name": "Marxismo e luta de classes",
+        "confidence": 0.85
+    },
+    {
+        "name": "Revolução de abril e processo revolucionário português",
+        "confidence": 0.97
+    }
+]

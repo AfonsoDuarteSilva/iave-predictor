@@ -15,17 +15,15 @@ client = anthropic.Anthropic()
 
 def categorize_text(text, subject, existing_topics):
     system = (
-        f"You are a JSON-only API. Never explain your reasoning. Never write text before or after the JSON.\n"
-        f"If an existing topic covers the exact same subject, you MUST use its exact name.\n"
-        f"If no existing topic is similar enough (CONFIDENCE BELOW 70 CREATE TOPIC), you MUST create a new one — never ignore a topic just because it's not in the list.\n"
-        f"Pick a maximum of 4 topics per group.\n"
-        f"Return ONLY JSON in this format,NO markdown, NO backticks:\n"
-        f'{{\"topics\": [{{\"name\": \"topic name\", \"confidence\": 0.9}}]}}\n\n'
+        "You are a JSON-only API. Return ONLY JSON, no text before or after.\n"
+        "Pick a maximum of 4 topics per group.\n"
+        "Return ONLY JSON in this format, NO markdown, NO backticks:\n"
+        "Wrap the JSON in <json></json> tags. Example: <json>{\"topics\": [{\"name\": \"topic name\", \"confidence\": 0.9}]}</json>\n"
     )
-
     prompt = (
         f"Analyze the following {subject} exam text and identify the topics covered.\n"
-        f"Existing topics: {existing_topics}\n\n"
+        f"Here are topics already identified in other exams for reference: {existing_topics}\n"
+        f"Use similar naming when the subject is the same, but don't feel constrained by this list.\n"
         f"Text:\n{text}"
     )
     response = client.messages.create(
@@ -39,11 +37,9 @@ def categorize_text(text, subject, existing_topics):
     )
     print(response.content[0].text) 
     raw = response.content[0].text
-    match = re.search(r'\{.*\}', raw, re.DOTALL)
-    clean = match.group(0) if match else raw
-    print(repr(clean))
+    match = re.search(r'<json>(.*?)</json>', raw, re.DOTALL)
+    clean = match.group(1).strip() if match else raw
     try:
         return json.loads(clean)
     except json.JSONDecodeError:
-        print("Not valid fomat")
-        return {"topics":[]}
+        return {"topics": []}   

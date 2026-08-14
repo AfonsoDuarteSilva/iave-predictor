@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Expansão e romanização",
+        "confidence": 0.97
+    },
+    {
+        "name": "Arquitetura e urbanismo romano",
+        "confidence": 0.85
+    },
+    {
+        "name": "Revolução liberal de 1820 e constitucionalismo português",
+        "confidence": 0.95
+    },
+    {
+        "name": "Crise da monarquia constitucional portuguesa",
+        "confidence": 0.85
+    },
+    {
+        "name": "Liberalismo e pensamento político do século xix",
+        "confidence": 0.9
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.98
+    },
+    {
+        "name": "Guerra fria e bipolarização mundial",
+        "confidence": 0.95
+    }
+]

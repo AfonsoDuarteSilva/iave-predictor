@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+{% block title %}{{ subject_name }} · IAVE Predictor{% endblock %}
+{% block content %}
+<div class="page-header">
+    <a href="/" class="back">← Disciplinas</a>
+    <h1>{{ subject_name }}</h1>
+    <p class="subtitle">Tópicos ordenados por probabilidade de aparecer no exame selecionado.</p>
+</div>
 
-<head>
-    <title>História A</title>
-</head>
+<form class="exam-selector" method="get" action="/{{ subject_code }}">
+    <div class="selector-group">
+        <label for="phase">Fase</label>
+        <select name="phase" id="phase" onchange="this.form.submit()">
+            {% for phase in phases %}
+            <option value="{{ phase.value }}" {% if phase.value==selected_phase %}selected{% endif %}>{{ phase.label }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
 
-<body>
-    <h1>Tópicos</h1>
-    <table>
-        <tr>
-            <th>Tópico</th>
-            <th>Probabilidade</th>
-        </tr>
-        {% for topic, score in scores.items() %}
-        <tr>
-            <td>{{ topic }}</td>
-            <td>{{ score }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-
-</html>
+<div class="topics-table">
+    <div class="table-header">
+        <span>Tópico</span>
+        <span>Probabilidade</span>
+    </div>
+    {% for topic, score in scores %}
+    <div class="topic-row">
+        <span class="topic-name">{{ topic }}</span>
+        <div class="score-cell">
+            <div class="bar-track">
+                <div class="bar-fill" style="width: {{ (score * 100)|round(1) }}%"></div>
+            </div>
+            <span class="score-value">{{ (score * 100)|round(1) }}%</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

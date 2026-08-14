@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Democracia e sociedade ateniense",
+        "confidence": 0.97
+    },
+    {
+        "name": "Antigo regime e absolutismo",
+        "confidence": 0.95
+    },
+    {
+        "name": "Iluminismo e enciclopedismo",
+        "confidence": 0.95
+    },
+    {
+        "name": "Liberalismo e pensamento político do século xix",
+        "confidence": 0.8
+    },
+    {
+        "name": "Crise da monarquia constitucional portuguesa",
+        "confidence": 0.85
+    },
+    {
+        "name": "Impacto da primeira guerra mundial e primeira república portuguesa",
+        "confidence": 0.95
+    },
+    {
+        "name": "Estado novo e salazarismo",
+        "confidence": 0.9
+    },
+    {
+        "name": "Guerra fria e bipolarização mundial",
+        "confidence": 0.95
+    },
+    {
+        "name": "Desagregação da urss e transição para economia de mercado",
+        "confidence": 0.85
+    },
+    {
+        "name": "China e reformas económicas de deng xiaoping",
+        "confidence": 0.9
+    },
+    {
+        "name": "Construção e desafios da unidade europeia",
+        "confidence": 0.75
+    }
+]
