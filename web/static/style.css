@@ -219,6 +219,57 @@ main {
     border-color: var(--accent);
 }
 
+.trend {
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 14px;
+}
+
+.trend-up {
+    color: #6db87a;
+}
+
+.trend-down {
+    color: #c0604a;
+}
+
+.trend-neutral {
+    color: var(--text-muted);
+}
+
+.topic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.topic-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.topic-years {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+}
+
 /* Topics table */
 .topics-table {
     display: flex;

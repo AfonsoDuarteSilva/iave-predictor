@@ -4,7 +4,7 @@
 <div class="page-header">
     <a href="/" class="back">← Disciplinas</a>
     <h1>{{ subject_name }}</h1>
-    <p class="subtitle">Tópicos ordenados por probabilidade de aparecer no exame selecionado.</p>
+    <p class="subtitle">Tópicos ordenados por probabilidade de aparecer no exame de {{ target_year }}.</p>
 </div>
 
 <form class="exam-selector" method="get" action="/{{ subject_code }}">
@@ -24,14 +24,24 @@
         <span>Tópico</span>
         <span>Probabilidade</span>
     </div>
-    {% for topic, score in scores %}
+    {% for t in scores %}
     <div class="topic-row">
-        <span class="topic-name">{{ topic }}</span>
+        <div class="topic-info">
+            <div class="topic-name-row">
+                <span class="trend trend-{{ t.trend }}">
+                    {% if t.trend == 'up' %}↑{% elif t.trend == 'down' %}↓{% else %}–{% endif %}
+                </span>
+                <span class="topic-name">{{ t.name }}</span>
+            </div>
+            {% if t.years %}
+            <span class="topic-years">{{ t.years }}</span>
+            {% endif %}
+        </div>
         <div class="score-cell">
             <div class="bar-track">
-                <div class="bar-fill" style="width: {{ (score * 100)|round(1) }}%"></div>
+                <div class="bar-fill" style="width: {{ (t.score * 100)|round(1) }}%"></div>
             </div>
-            <span class="score-value">{{ (score * 100)|round(1) }}%</span>
+            <span class="score-value">{{ (t.score * 100)|round(1) }}%</span>
         </div>
     </div>
     {% endfor %}
